@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
+	<title>Контакты</title>
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__inner">
+					<a class="header__logo" href="index.html">
+						<img src="img/logo.svg" alt="">
+					</a>
+					<ul class="header__list">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="">Наши услуги</a></li>
+						<li class="has-dropdown">
+							<a href="#" class="dropdown-show">
+								Направления деятельности
+								<span class="dropdown-arrow">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 8L0 1.21555L1.25417 0L7 5.59717L12.7458 0.0282681L14 1.24382L7 8Z" fill="#E18A04"/>
+                            </svg>
+
+                        </span>
+							</a>
+							<ul class="dropdown">
+								<li><a href="">Страхование имущественных рисков</a></li>
+								<li><a href="">Страхование персонала компании</a></li>
+							</ul>
+						</li>
+						<li><a class="active" href="contacts.html">Контакты</a></li>
+					</ul>
+					<div class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="content">
+			<section class="main main--contacts">
+				<div class="container">
+					<div class="main__inner">
+						<div class="main__desc">
+							<h1 class="main__title">КОНТАКТЫ</h1>
+						</div>
+						<div class="main__img">
+							<img src="img/main-img--10.webp" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contacts">
+				<div class="container">
+					<div class="contacts__inner">
+						<div class="contacts__items">
+							<div class="contacts__item">
+								<div class="contacts__item-icon">
+									<img src="img/location.svg" alt="">
+								</div>
+								<div class="contacts__item-desc">
+									<div class="contacts__item-title text26">Адрес (юридический и фактический)</div>
+									<div class="contacts__item-text">Москва, 129626, Проспект Мира, 102 стр. 16</div>
+								</div>
+							</div>
+							<div class="contacts__item">
+								<div class="contacts__item-icon">
+									<img src="img/mail.svg" alt="">
+								</div>
+								<div class="contacts__item-desc">
+									<div class="contacts__item-title text26">Электронная почта</div>
+									<a href="mailto:office@nobilisbrokers.ru" class="contacts__item-text mail">office@nobilisbrokers.ru</a>
+								</div>
+							</div>
+							<div class="contacts__item">
+								<div class="contacts__item-icon">
+									<img src="img/phone.svg" alt="">
+								</div>
+								<div class="contacts__item-desc">
+									<div class="contacts__item-title text26">Телефон</div>
+									<a href="tel:+ 74956454531" class="contacts__item-text phone">+ 7 495 645 4531</a>
+								</div>
+							</div>
+							<div class="contacts__item">
+								<div class="contacts__item-icon">
+									<img src="img/time.svg" alt="">
+								</div>
+								<div class="contacts__item-desc">
+									<div class="contacts__item-title text26">Режим работы</div>
+									<div class="contacts__item-text">Понедельник - пятница <br>  09.00- 18.00</div>
+								</div>
+							</div>
+						</div>
+						<map id="map"></map>
+					</div>
+				</div>
+			</section>
+		</main>
+		<header class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a class="footer__logo" href="index.html">
+                <img src="img/logo2.svg" alt="">
+            </a>
+            <div class="footer__group">
+                <ul class="footer__list">
+                    <li><a class="active" href="">Главная</a></li>
+                    <li><a href="">О нас</a></li>
+                    <li>
+                        <a href="">Наши услуги</a>
+                        <ul style="max-width: 205px">
+                            <li><a href="">Риск-консалтинг и управление рисками</a></li>
+                            <li><a href="">Размещение и тендерные процедуры</a></li>
+                            <li><a href="">Администрирование и сопровождение</a></li>
+                            <li><a href="">Урегулирование убытков</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Урегулирование убытков</a>
+                        <ul>
+                            <li><a href="">Страхование персонала компании</a></li>
+                            <li><a href="">Страхование имущественных рисков</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+                <div class="footer__text">Обновлено 05.11.2015</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	</div>
+	<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+
+	<script type="text/javascript">
+		ymaps.ready(function () {
+			var map = new ymaps.Map("map", {
+				center: [55.801106, 37.637192],
+				zoom: 18
+			});
+
+			var myPlacemark = new ymaps.Placemark([55.801106, 37.637192], null, {
+				iconImageSize: [45, 60],
+				iconImageOffset: [0, -30],
+			});
+			map.geoObjects.add(myPlacemark);
+		});
+	</script>
+</body>
+
+</html>
+
